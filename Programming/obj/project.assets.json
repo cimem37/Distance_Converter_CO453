@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/cimem/Documents/Programming/Programming.csproj",
+      "projectUniqueName": "/home/cimem/Documents/GitHub/Distance_Converter_CO453/Programming/Programming.csproj",
       "projectName": "Programming",
-      "projectPath": "/home/cimem/Documents/Programming/Programming.csproj",
+      "projectPath": "/home/cimem/Documents/GitHub/Distance_Converter_CO453/Programming/Programming.csproj",
       "packagesPath": "/home/cimem/.nuget/packages/",
-      "outputPath": "/home/cimem/Documents/Programming/obj/",
+      "outputPath": "/home/cimem/Documents/GitHub/Distance_Converter_CO453/Programming/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/cimem/.nuget/NuGet/NuGet.Config"
