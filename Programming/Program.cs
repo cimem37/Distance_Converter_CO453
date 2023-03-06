@@ -8,14 +8,14 @@ class Program
         Console.WriteLine("   Bruno's distance converter   ");
         Console.WriteLine("- - - - - - - - - - - - - - - - ");
 
-        Console.WriteLine("Please enter the numerical total to procceed");
+        Console.WriteLine("Please enter the numerical total to proceed:");
         double value;
         while (!double.TryParse(Console.ReadLine(), out value))
         {
-            Console.WriteLine("Invalid input. Please enter a numerical value:");
+            Console.WriteLine("[ERROR] Invalid input. Please enter a numerical value:");
         }
 
-        Console.WriteLine("Please assign the measurement unit for the inputted number");
+        Console.WriteLine("Please assign the measurement unit for the inputted number:");
         Console.WriteLine("1. Miles");
         Console.WriteLine("2. Feet");
         Console.WriteLine("3. Meters");
@@ -23,7 +23,7 @@ class Program
         int unit;
         while (!int.TryParse(Console.ReadLine(), out unit) || unit < 1 || unit > 3)
         {
-            Console.WriteLine("Invalid selection. Please enter 1, 2, or 3:");
+            Console.WriteLine("[ERROR] Invalid selection. Please enter 1, 2, or 3:");
         }
 
         string unit1 = "", unit2 = "";
@@ -54,30 +54,48 @@ class Program
                 break;
         }
 
-        Console.WriteLine("Select the unit of measurement to convert to:");
+        Console.WriteLine("Select the measurement unit you want to convert to:");
         Console.WriteLine("1. {0}", unit1);
         Console.WriteLine("2. {0}", unit2);
 
         int convertToUnit;
         while (!int.TryParse(Console.ReadLine(), out convertToUnit) || convertToUnit < 1 || convertToUnit > 2)
         {
-            Console.WriteLine("Invalid selection. Please enter 1 or 2:");
+            Console.WriteLine("[ERROR] Invalid selection. Please enter 1 or 2:");
         }
 
-        switch (convertToUnit)
+        double convertedValue = 0;
+        string convertedUnit = "";
+
+        if (convertToUnit == 1)
         {
-            case 1:
-                Console.WriteLine("{0} {1} is equal to {2} {3}", value, unit2, value1, unit1);
-                break;
-            case 2:
-                Console.WriteLine("{0} {1} is equal to {2} {3}", value, unit2, value2, unit2);
-                break;
+            convertedValue = value1;
+            convertedUnit = unit1;
+        }
+        else
+        {
+            convertedValue = value2;
+            convertedUnit = unit2;
+        }
+
+        Console.WriteLine("{0} {1} is equal to {2} {3}", value, unit2, convertedValue, convertedUnit);
+
+        Console.WriteLine("Would you like to convert this result to the previously unselected unit? (Y/N)");
+        string answer = Console.ReadLine().ToUpper();
+
+        if (answer == "Y")
+        {
+            if (convertToUnit == 1)
+            {
+                Console.WriteLine("{0} {1} is equal to {2} {3}", convertedValue, unit1, value2, unit2);
+            }
+            else
+            {
+                Console.WriteLine("{0} {1} is equal to {2} {3}", convertedValue, unit2, value1, unit1);
+            }
         }
 
         Console.WriteLine("- - - - - - - - - - - - - - - - ");
         Console.ReadLine();
     }
 }
-
-
-
