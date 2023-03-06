@@ -8,14 +8,14 @@ class Program
         Console.WriteLine("   Bruno's distance converter   ");
         Console.WriteLine("- - - - - - - - - - - - - - - - ");
 
-        Console.WriteLine("Please assign the measurement unit for the inputted number");
+        Console.WriteLine("Please enter the numerical total to procceed");
         double value;
         while (!double.TryParse(Console.ReadLine(), out value))
         {
             Console.WriteLine("Invalid input. Please enter a numerical value:");
         }
 
-        Console.WriteLine("Select the unit of measurement:");
+        Console.WriteLine("Please assign the measurement unit for the inputted number");
         Console.WriteLine("1. Miles");
         Console.WriteLine("2. Feet");
         Console.WriteLine("3. Meters");
